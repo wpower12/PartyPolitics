@@ -1,5 +1,5 @@
 /*
- * THIS IS CHANGE
+ * ListFixer - Utilityclass to parse some names. 
  */
 package votesim;
 
