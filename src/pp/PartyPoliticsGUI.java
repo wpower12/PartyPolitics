@@ -164,9 +164,11 @@ public class PartyPoliticsGUI extends javax.swing.JFrame {
     private void runButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runButtonActionPerformed
         // TODO add your handling code here:
        
+        int partyCount = Integer.parseInt(this.partyCountField.getText());
+        
         this.sim.setOpinionCount(Integer.parseInt(this.opinionCountField.getText()));
         this.sim.setVoterCount(Integer.parseInt(this.voterCountField.getText()));
-        this.sim.setPartyCount(Integer.parseInt(this.partyCountField.getText()));
+        this.sim.setPartyCount(partyCount);
         
         this.sim.generateParties();
         this.sim.generateVoters();
@@ -174,6 +176,18 @@ public class PartyPoliticsGUI extends javax.swing.JFrame {
         this.sim.runCycles( Integer.parseInt(this.cycleCountField.getText()));
         
         this.sim.printResults(null);
+        
+        //Results Window
+        ResultsGUI resultsWindow = new ResultsGUI();
+ 
+        //resultsWindow.addOverview();
+        
+        for( int p = 0; p < partyCount; p++ ){
+            resultsWindow.addTab( this.sim.party( p ) );
+        }
+        
+        resultsWindow.show();
+        
     }//GEN-LAST:event_runButtonActionPerformed
 
     /**

@@ -47,6 +47,10 @@ public class VoteSim {
         this.CYCLECOUNT = c;
     }
     
+    public Party party( int p ){
+        return this.parties.get(p);
+    }
+    
     public void generateParties() {
         parties = new ArrayList<Party>();
         for (int p = 0; p < PARTYCOUNT; p++) {
