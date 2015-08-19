@@ -11,18 +11,21 @@ import java.util.ArrayList;
  *
  * @author wpower
  */
-public class Party extends Opinions {
+public class Party extends OpinionSet {
 
     private ArrayList<Voter> supporters;
     private int partyid;
     private String partyName;
+    private ArrayList<int[]> history;
+    
     
     static private int partycount = 0;
     static private ThingNamer partyNamer = new ThingNamer( "parties.txt", 20 );
     
     public Party(int o) {
         super(o);
-        supporters = new ArrayList<Voter>();
+        supporters = new ArrayList<>();
+        history = new ArrayList<>();
         partyid = Party.nextID();
         partyName = partyNamer.getNext();
     }
@@ -64,7 +67,8 @@ public class Party extends Opinions {
             }
             opinionList[op] = bestVal;
         }
-
+        
+        history.add(opinionList);
     }
     
     public void clearSupporters() {

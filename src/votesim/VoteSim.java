@@ -108,7 +108,7 @@ public class VoteSim {
     }
 
     private void vote(ArrayList<Voter> v, ArrayList<Party> p) {
-        ArrayList<Party> bestParties = new ArrayList<Party>();
+        ArrayList<Party> bestParties = new ArrayList<>();
         int winner;
         int bestScore;
 

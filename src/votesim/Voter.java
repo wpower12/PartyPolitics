@@ -10,13 +10,13 @@ package votesim;
  * @author wpower
  */
 
-public class Voter extends Opinions {
+public class Voter extends OpinionSet {
 
     public Voter(int o) {
         super(o);
     }
     
-    public int score( Opinions party ){
+    public int score( OpinionSet party ){
         
         int ret = 0;
         

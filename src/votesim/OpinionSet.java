@@ -9,14 +9,14 @@ package votesim;
  *
  * @author wpower
  */
-public class Opinions {
+public class OpinionSet {
 
     protected int[] opinionList;
-    protected final int MAXOPINIONVALUE = 5;
+    protected final int MAXOPINIONVALUE = 3;
     
     public int length;
     
-    public Opinions(int o) {
+    public OpinionSet(int o) {
         opinionList = new int[o];
         for (int i = 0; i < o; i++) {
             opinionList[i] = (int) Math.floor(Math.random() * MAXOPINIONVALUE);
